@@ -1,0 +1,13 @@
+{
+  "name": "ttbar",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A lightning-fast app launcher for Windows 11",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

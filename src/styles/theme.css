@@ -1,0 +1,78 @@
+/* ============================================
+   TTBar — Design Tokens & Theme
+   ============================================ */
+
+:root {
+  /* ── Color Palette (Nostalgic 2008 / Windows XP & 7 Silver-Blue Dialog Theme) ── */
+  --bg-window:        #eef3fa; /* Light blue-gray dialog background */
+  --bg-input:         #ffffff;
+  --bg-input-focus:   #ffffff;
+  --bg-result:        transparent;
+  --bg-result-hover:  rgba(74, 110, 165, 0.08); /* Windows 7 selection blue */
+  --bg-result-active: rgba(74, 110, 165, 0.15); /* Windows 7 active selection blue */
+
+  --accent:           #4a6ea5; /* Classic blue */
+  --accent-light:     #3b5a80;
+  --accent-dim:       rgba(74, 110, 165, 0.15);
+  --accent-glow:      rgba(74, 110, 165, 0.12);
+
+  --text-primary:     #000000; /* Rich black text */
+  --text-secondary:   #4c535c; /* Dark gray path text */
+  --text-tertiary:    #717b87;
+  --text-accent:      #2b5797;
+
+  --border-subtle:    #abc1de; /* Classic blue window frame border */
+  --border-input:     #7f9db9; /* Windows XP input border */
+  --border-focus:     #2b5797;
+
+  --icon-default:     #7f9db9;
+  --icon-active:      #4a6ea5;
+
+  /* ── Shadows ── */
+  --shadow-window:    0 32px 80px rgba(0, 0, 0, 0.65),
+                      0 8px 24px rgba(0, 0, 0, 0.4),
+                      0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-input:     inset 0 1px 3px rgba(0, 0, 0, 0.3),
+                      0 0 0 1px var(--border-input);
+  --shadow-input-focus: inset 0 1px 3px rgba(0, 0, 0, 0.2),
+                        0 0 0 1.5px var(--border-focus),
+                        0 0 20px var(--accent-glow);
+
+  /* ── Typography ── */
+  --font-family:      'Inter', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-size-input:  18px;
+  --font-size-result: 14px;
+  --font-size-path:   11.5px;
+  --font-size-hint:   12px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --line-height:      1.5;
+
+  /* ── Spacing ── */
+  --space-xs:         4px;
+  --space-sm:         8px;
+  --space-md:         12px;
+  --space-lg:         16px;
+  --space-xl:         20px;
+  --space-2xl:        24px;
+
+  /* ── Radii ── */
+  --radius-sm:        8px;
+  --radius-md:        12px;
+  --radius-lg:        16px;
+  --radius-full:      9999px;
+
+  /* ── Sizing ── */
+  --window-width:     680px;
+  --input-height:     44px;
+  --result-height:    48px;
+  --icon-size:        32px;
+  --icon-size-sm:     20px;
+
+  /* ── Transitions ── */
+  --transition-fast:   120ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-normal: 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-smooth: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}

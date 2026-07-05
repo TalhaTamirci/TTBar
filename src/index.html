@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TTBar</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="launcher-window" id="launcherWindow">
+      <!-- Search Area -->
+      <div class="search-area">
+        <!-- Retro Magnifying Glass Image -->
+        <div class="retro-icon-wrapper">
+          <img class="retro-search-icon" src="assets/retro_magnifier.png" alt="Search Icon" />
+        </div>
+
+        <!-- Joint Input & Button Box -->
+        <div class="retro-search-box">
+          <input
+            type="text"
+            class="retro-input"
+            id="searchInput"
+            placeholder="Bir uygulama veya dosya ara..."
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          />
+          <button class="retro-search-btn" id="searchBtn">Search</button>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider" id="divider"></div>
+
+      <!-- Results Container -->
+      <div class="results-container" id="resultsContainer">
+        <ul class="results-list" id="resultsList">
+          <!-- Results will be injected here by JS -->
+        </ul>
+      </div>
+
+      <!-- Status Bar -->
+      <div class="status-bar" id="statusBar">
+        <span class="status-text" id="statusText"></span>
+        <div class="status-keys">
+          <div class="status-key">
+            <span class="action-key">↑↓</span>
+            <span>Gezin</span>
+          </div>
+          <div class="status-key">
+            <span class="action-key">↵</span>
+            <span>Aç</span>
+          </div>
+          <div class="status-key">
+            <span class="action-key">Esc</span>
+            <span>Kapat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
