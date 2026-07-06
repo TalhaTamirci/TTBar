@@ -3972,6 +3972,7 @@ version = "0.1.0"
 dependencies = [
  "fuzzy-matcher",
  "lnk",
+ "open",
  "serde",
  "serde_json",
  "tauri",

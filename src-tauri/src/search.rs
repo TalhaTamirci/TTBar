@@ -243,7 +243,25 @@ pub fn perform_search(query: &str) -> Vec<SearchResult> {
     let mut results: Vec<SearchResult> = entries
         .iter()
         .filter_map(|entry| {
-            let score = fuzzy_score(&query_lower, &entry.name_lower);
+            let score_name = fuzzy_score(&query_lower, &entry.name_lower);
+
+            // Path match (matches directory structures, folder names, etc.)
+            let score_path = fuzzy_score(&query_lower, &entry.path.to_lowercase()) / 2;
+
+            // Raw filename match (e.g. matching 'chrome.exe' or 'code.exe' directly)
+            let score_file_name = if let Some(file_name) = std::path::Path::new(&entry.path).file_name() {
+                let file_name_lower = file_name.to_string_lossy().to_lowercase();
+                if file_name_lower != entry.name_lower {
+                    fuzzy_score(&query_lower, &file_name_lower) * 4 / 5
+                } else {
+                    0
+                }
+            } else {
+                0
+            };
+
+            let score = std::cmp::max(score_name, std::cmp::max(score_path, score_file_name));
+
             if score > 0 {
                 Some(SearchResult {
                     name: entry.name.clone(),

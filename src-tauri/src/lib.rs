@@ -28,16 +28,15 @@ fn search(query: &str) -> Vec<SearchResult> {
     search::perform_search(query)
 }
 
-/// Open a result item — launches the file/app
+/// Open a result item — launches the file/app natively via Windows Explorer to bypass untrusted source alerts
 #[tauri::command]
 fn open_result(path: &str) -> Result<(), String> {
     use std::process::Command;
 
-    // Use Windows 'start' command to open files/apps
-    Command::new("cmd")
-        .args(["/C", "start", "", path])
+    Command::new("explorer")
+        .arg(path)
         .spawn()
-        .map_err(|e| format!("Failed to open: {}", e))?;
+        .map_err(|e| format!("Açma işlemi başarısız: {}", e))?;
 
     Ok(())
 }
